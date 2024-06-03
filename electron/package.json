@@ -1,11 +1,12 @@
 {
-  "name": "electron-app",
+  "name": "4-2day",
+  "productName": "4 2DAY!",
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "author": "",
+  "author": "Mario Vázquez Pérez",
   "license": "ISC",
   "description": "",
   "devDependencies": {

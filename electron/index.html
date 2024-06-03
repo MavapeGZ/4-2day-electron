@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electron APP</title>
-</head>    
-<body>
-    <h1 style="color: aqua;">Hello world</h1>
+    <!-- <title>4 2day!</title> -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="./js_core/DOM_class.js"></script>
+    
+</head>  
+
+<body onload="DOM_class.initialize()">
+    <div id="div_title_page" class="format_title_page">
+        <p id="title">4 2DAY!</p>
+    </div>
+    
+    <div id="div_icons">
+        <p id="icons">
+            <img src="./icons/ADD.png" id="ADD_img"/>
+        </p>
+    </div>
+
+    <div id="div_table_titles">
+        <span class="class_table_title" id="type_title">Type</span>
+        <span class="class_table_title" id="date_title">Date</span>
+        <span class="class_table_title" id="name_title">Name</span>
+        <span class="class_table_title" id="comments_title">Comments</span>
+    </div>
+
+    <div id="id_data_table">
+
+    </div>
+
+    <div class="div_GEN_form" id='div_GEN_form'>
+        <div class="form_content" id="form_content">
+            <div class="class_form_title">
+                <spam class="class_title_content_form">titulo formulario en este tamano</spam>
+            </div>
+    
+            <form id='GEN_form' name='GEN_form' class="form">
+    
+    
+    
+            </form>
+            <br><br>
+    
+            <input type="image" src="./iconos/BACK.png" class="buttonBACK title_back"
+                onclick="DOM_class.cerrar_div_formulario();"></button>
+        </div>
+    </div>
+
 </body>
+
 <script>
     console.warn("render process")
 </script>
