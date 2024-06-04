@@ -6,18 +6,20 @@
     <!-- <title>4 2day!</title> -->
     <link rel="stylesheet" href="styles.css">
 
-    <script type="text/javascript" src="./js_core/DOM_class.js"></script>
-    
+    <script type="text/javascript" src="./DOM_class.js"></script>
+    <script type="text/javascript" src="./form.js"></script>
+
 </head>  
 
-<body onload="DOM_class.initialize()">
+<!-- <body onload="DOM_class.initialize()"> -->
+<body>
     <div id="div_title_page" class="format_title_page">
         <p id="title">4 2DAY!</p>
     </div>
     
     <div id="div_icons">
         <p id="icons">
-            <img src="./icons/ADD.png" id="ADD_img"/>
+            <img src="./icons/ADD.png" id="ADD_img" onclick="form.CreateForm_ADD()"/>
         </p>
     </div>
 
@@ -39,14 +41,12 @@
             </div>
     
             <form id='GEN_form' name='GEN_form' class="form">
-    
-    
-    
+            
             </form>
             <br><br>
     
-            <input type="image" src="./iconos/BACK.png" class="buttonBACK title_back"
-                onclick="DOM_class.cerrar_div_formulario();"></button>
+            <input type="image" src="./icons/BACK.png" class="BACK_img"
+                onclick="DOM_class.CloseFormDiv();"></button>
         </div>
     </div>
 
