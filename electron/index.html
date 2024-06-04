@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>4 2day!</title> -->
     <link rel="stylesheet" href="styles.css">
-
     <script type="text/javascript" src="./DOM_class.js"></script>
     <script type="text/javascript" src="./form.js"></script>
+</head>
 
-</head>  
-
-<!-- <body onload="DOM_class.initialize()"> -->
-<body>
+<body onload="DOM_class.Initialize()">
     <div id="div_title_page" class="format_title_page">
         <p id="title">4 2DAY!</p>
     </div>
-    
+
     <div id="div_icons">
         <p id="icons">
-            <img src="./icons/ADD.png" id="ADD_img" onclick="form.CreateForm_ADD()"/>
+            <img src="./icons/ADD.png" id="ADD_img" onclick="form.CreateForm_ADD()" />
         </p>
     </div>
 
@@ -30,29 +27,26 @@
         <span class="class_table_title" id="comments_title">Comments</span>
     </div>
 
-    <div id="id_data_table">
-
-    </div>
+    <div id="id_data_table"></div>
 
     <div class="div_GEN_form" id='div_GEN_form'>
         <div class="form_content" id="form_content">
             <div class="class_form_title">
-                <spam class="class_title_content_form">titulo formulario en este tamano</spam>
+                <span class="class_title_content_form">Add your task</span>
             </div>
-    
-            <form id='GEN_form' name='GEN_form' class="form">
-            
-            </form>
+
+            <form id='GEN_form' name='GEN_form' class="form"></form>
             <br><br>
-    
-            <input type="image" src="./icons/BACK.png" class="BACK_img"
-                onclick="DOM_class.CloseFormDiv();"></button>
+
+            <input type="image" src="./icons/BACK.png" alt="Back" class="BACK_img" onclick="DOM_class.CloseFormDiv();"></button> 
+            <input type="image" src="./icons/ADD.png" alt="Submit" class="ADD_img" onclick="form.SubmitForm();"></button>           
+            
         </div>
     </div>
-
 </body>
 
 <script>
     console.warn("render process")
 </script>
+
 </html>

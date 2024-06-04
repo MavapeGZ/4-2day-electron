@@ -27,17 +27,49 @@ input {
     margin-right: 100px;
 }
 
+.radio_label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Ajusta el espacio entre los botones */
+    cursor: pointer;
+}
+
+.radio_input {
+    display: none; /* Oculta el input del radio button */
+}
+
+.radio_image {
+    width: 50px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: 50px; /* Ajusta la altura de la imagen según tus necesidades */
+    margin-right: 10px;
+    border: 2px solid transparent; /* Agrega un borde transparente */
+    cursor: pointer;
+}
+
+.radio_input:checked + .radio_image {
+    border: 2px solid #333; /* Color del borde cuando está seleccionado */
+    border-radius: 5px; /* Opcional: para redondear el borde */
+}
+
+#type_radio_container {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en una fila */
+}
+
+
+
 .div_GEN_form {
-    /*Full height and full width*/
-    width: 100%;    
+    /* Full height and full width */
+    width: 100%;
     height: 100%;
-    /*Keep body dimensions*/
-    position: fixed;    
-    /*background-color: rgba(1, 1, 1, 0.95); /*Color de fondo, incluye opacidad del 90%*/
+    /* Keep body dimensions */
+    position: fixed;
+    /* background-color: rgba(1, 1, 1, 0.95);*/
     top: 0;
     left: 0;
-    /*Avoid elements of overlapsing modal window*/
-    z-index: 1001;    
+    /* Avoid elements of overlapsing modal window */
+    z-index: 1001;
+    display: none;
 }
 
 .form_content {
@@ -61,21 +93,19 @@ input {
     left: 20px;
 }
 
-.class_form_title{
+.class_form_title {
     position: relative;
     height: 100px;
     width: 100%;
-
     background: #539695;
     color: #333;
 }
 
-.class_title_content_form{
+.class_title_content_form {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-
     font-weight: bold;
 }
 
@@ -90,7 +120,13 @@ input {
     margin-top: 20px;
 }
 
-#BACK_img{
+.BACK_img {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+.ADD_img{
     width: 50px;
     height: 50px;
     margin-left: 20px;
