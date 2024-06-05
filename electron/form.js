@@ -115,9 +115,8 @@ class form {
                 <div class="data_cell"><img src="${typeImageSrc}" class="table_image"></div>
                 <div class="data_cell">${date}</div>
                 <div class="data_cell">${name}</div>
-                <div class="data_cell">${comments}
-                    <img src="./icons/delete.png" class="delete_button" onclick="form.DeleteTask(this)">
-                </div>
+                <div class="data_cell">${comments}</div>
+                <div class="data_cell"><img src="./icons/delete.png" class="delete_button" onclick="form.DeleteTask(this)"></div>
             `;
 
             table.appendChild(newRow);

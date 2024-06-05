@@ -1,6 +1,4 @@
-// DOM_class.js
 class DOM_class {
-
     static Initialize() {
         DOM_class.CloseFormDiv();
     }
@@ -13,7 +11,7 @@ class DOM_class {
     static CloseFormDiv() {
         document.getElementById('div_GEN_form').style.display = 'none';
         document.getElementById('GEN_form').style.display = 'none';
-    }    
+    }
 }
 
 module.exports = DOM_class;

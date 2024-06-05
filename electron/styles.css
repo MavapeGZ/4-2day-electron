@@ -50,15 +50,11 @@ input {
 }
 
 .div_GEN_form {
-    /* Full height and full width */
     width: 100%;
     height: 100%;
-    /* Keep body dimensions */
     position: fixed;
-    /* background-color: rgba(1, 1, 1, 0.95);*/
     top: 0;
     left: 0;
-    /* Avoid elements of overlapsing modal window */
     z-index: 1001;
     display: none;
 }
@@ -104,7 +100,6 @@ input {
     margin-right: 150px;
 }
 
-/* img tam */
 #ADD_img {
     width: 50px;
     height: 50px;
@@ -123,12 +118,10 @@ input {
     margin-left: 20px;
 }
 
-/* div title */
 #div_title_page {
     background-color: #816352;
     height: 100px;
     width: calc(100% + 40px);
-    /* width + body padding */
     margin-top: 40px;
     margin-left: -40px;
     margin-right: -40px;
@@ -136,64 +129,43 @@ input {
     text-align: center;
 }
 
-#id_data_table_container {
-    display: grid;
-    grid-template-columns: 1fr; /* Una columna para los títulos y otra para los datos */
-    gap: 10px;
-}
-
-/* Estilo para las filas de datos */
-.class_table_title {
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    width: calc(20% - 10px); /* Ajusta según el número de columnas */
-    padding: 10px;
-    text-align: center;
-}
-
 #div_table_titles {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Asegura que hay 5 columnas de igual tamaño */
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr; /* Asegura que hay 5 columnas con el mismo tamaño que los datos */
     gap: 10px;
     padding: 10px;
     font-weight: bold;
     border-bottom: 2px solid #ccc;
 }
 
+#id_data_table {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna para las filas de datos */
+    gap: 10px;
+}
+
 /* Estilo para las filas de datos */
 .data_row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Asegura que hay 5 columnas */
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr; /* Asegura que hay 5 columnas con el mismo tamaño que los títulos */
     gap: 10px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
 .data_cell {
-    text-align: center; /* Para alinear el texto en el centro */
+    text-align: left; /* Para alinear el texto en el centro */
     overflow-wrap: break-word; /* Permite el ajuste del contenido de texto */
     word-wrap: break-word; /* Compatibilidad con navegadores antiguos */
     overflow: hidden;
-    position: relative; /* Asegura que los elementos hijos puedan posicionarse relativamente */
 }
 
-.data_cell .delete_button {
-    position: absolute;
-    right: 10px; /* Ajusta este valor según sea necesario */
-    top: 50%;
-    transform: translateY(-50%);
+.delete_button {
     width: 20px;
     height: 20px;
     cursor: pointer;
 }
 
-.data_cell img.table_image {
-    width: 30px; /* Ajusta este tamaño según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-/* table titles */
 #title {
     margin: 0;
     font-size: 70px;
@@ -202,24 +174,27 @@ input {
     text-align: center;
 }
 
-/* Estilo para agrandar el campo "Name" */
 .name_input {
-    width: 300px; /* Ajusta el tamaño según tus necesidades */
-    height: 30px; /* Ajusta la altura según tus necesidades */
+    width: 300px;
+    height: 30px;
     font-size: 16px;
 }
 
-/* Estilo para el textarea de "Comments" */
 textarea {
-    width: 500px; /* Ajusta el tamaño según tus necesidades */
-    height: 200px; /* Ajusta la altura según tus necesidades */
+    width: 500px;
+    height: 200px;
     font-size: 16px;
-    resize: none; /* Evita que el usuario cambie el tamaño */
+    resize: none;
 }
 
-/* Estilo para el campo de tipo "Date" */
 input[type="date"] {
-    width: 200px; /* Ajusta el tamaño según tus necesidades */
-    height: 30px; /* Ajusta la altura según tus necesidades */
+    width: 200px;
+    height: 30px;
     font-size: 16px;
+}
+
+/* Asegúrate de que las imágenes en las celdas de datos tengan el tamaño correcto */
+.data_cell img.table_image {
+    width: 30px; /* Ajusta este tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
