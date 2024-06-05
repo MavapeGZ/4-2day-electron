@@ -1,13 +1,15 @@
 const { app, BrowserWindow } = require('electron');
+const fs = require('fs');
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        title: '4 2DAY!',  // Establecer el título de la ventana
+        title: '4 2DAY!',
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false  // Requerido para nodeIntegration
+            contextIsolation: false,
+            webSecurity: false
         }
     });
 
@@ -15,7 +17,14 @@ function createWindow() {
     win.webContents.openDevTools();
 }
 
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+    createWindow();
+    // Llama a LoadDataFromStorage tan pronto como la aplicación esté lista
+    const formScript = `require('./form').LoadDataFromStorage();`;
+    app.on('browser-window-created', (event, window) => {
+        window.webContents.executeJavaScript(formScript);
+    });
+});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {

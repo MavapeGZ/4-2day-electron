@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #41d6d4d5;
@@ -19,12 +18,6 @@ p {
 input {
     height: 40px;
     width: 40px;
-}
-
-.class_table_title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 100px;
 }
 
 .radio_label {
@@ -55,8 +48,6 @@ input {
     display: flex;
     flex-direction: row; /* Alinea los elementos en una fila */
 }
-
-
 
 .div_GEN_form {
     /* Full height and full width */
@@ -126,7 +117,7 @@ input {
     margin-left: 20px;
 }
 
-.ADD_img{
+.ADD_img {
     width: 50px;
     height: 50px;
     margin-left: 20px;
@@ -145,6 +136,63 @@ input {
     text-align: center;
 }
 
+#id_data_table_container {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna para los títulos y otra para los datos */
+    gap: 10px;
+}
+
+/* Estilo para las filas de datos */
+.class_table_title {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: calc(20% - 10px); /* Ajusta según el número de columnas */
+    padding: 10px;
+    text-align: center;
+}
+
+#div_table_titles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Asegura que hay 5 columnas de igual tamaño */
+    gap: 10px;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Estilo para las filas de datos */
+.data_row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Asegura que hay 5 columnas */
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.data_cell {
+    text-align: center; /* Para alinear el texto en el centro */
+    overflow-wrap: break-word; /* Permite el ajuste del contenido de texto */
+    word-wrap: break-word; /* Compatibilidad con navegadores antiguos */
+    overflow: hidden;
+    position: relative; /* Asegura que los elementos hijos puedan posicionarse relativamente */
+}
+
+.data_cell .delete_button {
+    position: absolute;
+    right: 10px; /* Ajusta este valor según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.data_cell img.table_image {
+    width: 30px; /* Ajusta este tamaño según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
 /* table titles */
 #title {
     margin: 0;
@@ -152,4 +200,26 @@ input {
     text-shadow: 2px 2px 5px #41d6d4d5, -2px -2px 5px #41d6d4d5;
     font-weight: bold;
     text-align: center;
+}
+
+/* Estilo para agrandar el campo "Name" */
+.name_input {
+    width: 300px; /* Ajusta el tamaño según tus necesidades */
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    font-size: 16px;
+}
+
+/* Estilo para el textarea de "Comments" */
+textarea {
+    width: 500px; /* Ajusta el tamaño según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    font-size: 16px;
+    resize: none; /* Evita que el usuario cambie el tamaño */
+}
+
+/* Estilo para el campo de tipo "Date" */
+input[type="date"] {
+    width: 200px; /* Ajusta el tamaño según tus necesidades */
+    height: 30px; /* Ajusta la altura según tus necesidades */
+    font-size: 16px;
 }
