@@ -1,30 +1,26 @@
 const { app, BrowserWindow } = require('electron');
-const fs = require('fs');
+const path = require('path');
 
 function createWindow() {
-    const win = new BrowserWindow({
+    const mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        title: '4 2DAY!',
         webPreferences: {
-            nodeIntegration: true,
+            preload: path.join(__dirname, 'preload.js'),
             contextIsolation: false,
-            webSecurity: false
+            enableRemoteModule: true,
+            nodeIntegration: true
         }
     });
 
-    win.loadFile('index.html');
-    win.webContents.openDevTools();
+    mainWindow.loadFile('index.html');
+
+    mainWindow.webContents.on('did-finish-load', () => {
+        // No need to add an event listener here since it's done in the HTML
+    });
 }
 
-app.whenReady().then(() => {
-    createWindow();
-    // Llama a LoadDataFromStorage tan pronto como la aplicación esté lista
-    const formScript = `require('./form').LoadDataFromStorage();`;
-    app.on('browser-window-created', (event, window) => {
-        window.webContents.executeJavaScript(formScript);
-    });
-});
+app.on('ready', createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
