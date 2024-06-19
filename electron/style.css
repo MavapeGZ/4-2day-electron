@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: aliceblue;
+    background-color: #A8D8D8;
     display: grid;
     grid-template-rows: auto auto;
     row-gap: 80px;
@@ -13,11 +13,11 @@ body {
 }
 
 .task_input_container {
-    background-color: aliceblue;
+    background-color: #bcd9e7;
     padding: 30px;
     max-width: 600px;
     margin: auto;
-    box-shadow: 0 0 10px #aaaaaa;
+    box-shadow: 0 0 10px #688f8f;
     border-radius: 10px;
     display: grid;
     grid-template-rows: auto auto;
@@ -52,7 +52,7 @@ body {
 
 form input[type="text"],
 form input[type="date"],
-form input[type="image"] {
+form textarea {
     padding: 8px 15px;
     border: none;
     background-color: #aaaaaa;
@@ -61,21 +61,16 @@ form input[type="image"] {
     box-shadow: 0 0 5px #5a5a5a5d;
     width: 100%;
     box-sizing: border-box;
+    resize: none;
 }
 
 input[type="submit"] {
     padding: 10px;
-    background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
     box-sizing: border-box;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
 }
 
 .type-options {
@@ -102,5 +97,46 @@ input[type="submit"]:hover {
 }
 
 .type-options input[type="radio"]:checked + label img {
-    border-color: #007bff;
+    border-color: #79d0d0;
+}
+
+#btn {
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    border-radius: 10px;
+}
+
+form div label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#task_data {
+    margin: 0 40px 0 40px;    
+}
+
+.task_data_container {
+    background-color: #bcd9e7;
+    padding: 30px;
+    margin: 0 30px 0 30px;
+    box-shadow: 0 0 10px #aaaaaa;
+    border-radius: 10px;
+}
+
+#table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table thead {
+    background-color: black;
+    border-radius: 10px 10px 0 0;    
+}
+
+#table thead td {
+    padding: 20px;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
 }
