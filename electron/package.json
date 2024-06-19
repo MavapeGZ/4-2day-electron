@@ -1,9 +1,9 @@
 {
   "name": "electron",
   "productName": "4 2Day!",
-  "author": "Mario Vázquez Pérez",
+  "author": "Mario Vazquez Perez",
   "description": "A simple tasks-to-do application",
-  "main": "main.js",
+  "main": "./main.js",
   "version": "1.0.0",
   "scripts": {
     "start": "electron .",
@@ -20,7 +20,13 @@
   "build": {
     "appId": "com.42Day!",
     "files": [
-      "!build-assets/**/*"
-    ]
+      "!build-assets/**/*",
+      "tasks.db",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
   }
 }

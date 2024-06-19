@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const Datastore = require('nedb');
+const dbPath = path.join(app.getPath('userData'), 'tasks.db');
 
 // Crear una nueva base de datos y cargarla automáticamente
 let tasks = new Datastore({ filename: path.join(__dirname, './tasks.db'), autoload: true });
