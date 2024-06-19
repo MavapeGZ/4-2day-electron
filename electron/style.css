@@ -76,7 +76,7 @@ input[type="submit"] {
 .type-options {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
 .type-options input[type="radio"] {
@@ -93,10 +93,10 @@ input[type="submit"] {
     border-radius: 5px;
     transition: border-color 0.3s;
     max-width: 80px;
-    height: auto; 
+    height: auto;
 }
 
-.type-options input[type="radio"]:checked + label img {
+.type-options input[type="radio"]:checked+label img {
     border-color: #79d0d0;
 }
 
@@ -113,7 +113,7 @@ form div label {
 }
 
 #task_data {
-    margin: 0 40px 0 40px;    
+    margin: 0 40px 0 40px;
 }
 
 .task_data_container {
@@ -124,14 +124,9 @@ form div label {
     border-radius: 10px;
 }
 
-#table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
 #table thead {
     background-color: black;
-    border-radius: 10px 10px 0 0;    
+    border-radius: 10px 10px 0 0;
 }
 
 #table thead td {
@@ -139,4 +134,65 @@ form div label {
     color: #ffffff;
     font-size: 10px;
     text-align: center;
+}
+
+/* Estilos para la tabla */
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#table th,
+#table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#table th {
+    background-color: #f2f2f2;
+}
+
+/* Ajustes específicos para la columna Date */
+#table td:nth-child(3) {
+    /* Ajusta según la posición de la columna Date en tu tabla */
+    white-space: nowrap;
+    /* Evita que el contenido se ajuste automáticamente */
+    overflow: hidden;
+    /* Oculta cualquier contenido que se desborde */
+    text-overflow: ellipsis;
+    /* Muestra puntos suspensivos (...) si el contenido desborda */
+    max-width: 200px;
+    /* Ajusta según el tamaño máximo que deseas que ocupe la celda */
+}
+
+/* Opcional: Asegurar que el texto completo se muestre en hover */
+#table td:nth-child(3):hover {
+    white-space: normal;
+    overflow: visible;
+    z-index: 1;
+    position: relative;
+}
+
+#table img {
+    max-width: 50px;
+    /* Ajusta el tamaño máximo de las imágenes */
+    height: auto;
+    /* Mantener la proporción de aspecto */
+    display: block;
+    /* Evitar el espacio adicional */
+    margin: 0 auto;
+    /* Centrar la imagen dentro de la celda */
+}
+
+#task_data td.description {
+    word-wrap: break-word; /* Permitir ajuste de línea */
+    white-space: normal;   /* Permitir que el texto se ajuste a múltiples líneas */
+}
+
+.delete-icon {
+    cursor: pointer;
+    width: 30px; /* Ajustar según el tamaño deseado */
+    height: 30px; /* Ajustar según el tamaño deseado */
 }

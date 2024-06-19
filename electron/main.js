@@ -35,13 +35,39 @@ app.on('activate', () => {
     }
 });
 
-// Manejar el evento 'add-task' desde el proceso de renderizado
+// Function to fetch all tasks
+ipcMain.handle('get-tasks', async () => {
+    return new Promise((resolve, reject) => {
+        tasks.find({}, (err, docs) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(docs);
+            }
+        });
+    });
+});
+
+// Handle add-task event
 ipcMain.on('add-task', (event, task) => {
     tasks.insert(task, (err, newDoc) => {
         if (err) {
-            event.reply('task-added', 'Error saving task');
+            event.reply('task-added', { success: false, message: 'Error saving task' });
         } else {
-            event.reply('task-added', 'Task saved successfully');
+            event.reply('task-added', { success: true, message: 'Task saved successfully', task: newDoc });
         }
+    });
+});
+
+
+ipcMain.handle('delete-task', async (event, taskId) => {
+    return new Promise((resolve, reject) => {
+        tasks.remove({ _id: taskId }, {}, (err, numRemoved) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve({ success: true, message: 'Task deleted successfully' });
+            }
+        });
     });
 });
