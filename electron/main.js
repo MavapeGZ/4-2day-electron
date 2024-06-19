@@ -3,7 +3,7 @@ const path = require('path');
 const Datastore = require('nedb');
 
 // Crear una nueva base de datos y cargarla automáticamente
-let tasks = new Datastore({ filename: path.join(__dirname, 'tasks.db'), autoload: true });
+let tasks = new Datastore({ filename: path.join(__dirname, './tasks.db'), autoload: true });
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -18,7 +18,6 @@ function createWindow() {
     });
 
     win.loadFile("index.html");
-    win.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);

@@ -1,14 +1,16 @@
 {
   "name": "electron",
-  "version": "1.0.0",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
+  "productName": "4 2Day!",
   "author": "Mario Vázquez Pérez",
-  "license": "ISC",
   "description": "A simple tasks-to-do application",
-  "dependencies": {    
+  "main": "main.js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder"
+  },
+  "license": "ISC",
+  "dependencies": {
     "nedb": "^1.8.0"
   },
   "devDependencies": {
@@ -16,13 +18,9 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "!yaD2 4",
-    "productName": "4 2Day!",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": "portable"
-    }
+    "appId": "com.42Day!",
+    "files": [
+      "!build-assets/**/*"
+    ]
   }
 }
