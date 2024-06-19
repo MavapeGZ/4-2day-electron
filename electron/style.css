@@ -114,6 +114,12 @@ form div label {
 
 #task_data {
     margin: 0 40px 0 40px;
+    overflow: auto;
+}
+
+#task_data table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .task_data_container {
@@ -195,4 +201,20 @@ form div label {
     cursor: pointer;
     width: 30px; /* Ajustar según el tamaño deseado */
     height: 30px; /* Ajustar según el tamaño deseado */
+}
+
+.past-due {
+    background-color: #ac414a; /* Color pastel para tareas pasadas */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none; /* Inicialmente oculto */
+}
+
+.name, .description {
+    word-wrap: break-word;
+    white-space: normal;
 }

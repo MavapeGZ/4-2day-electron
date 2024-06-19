@@ -7,9 +7,22 @@
   },
   "author": "Mario Vázquez Pérez",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "electron": "^31.0.1",
+  "description": "A simple tasks-to-do application",
+  "dependencies": {    
     "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "electron": "^31.0.1",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "!yaD2 4",
+    "productName": "4 2Day!",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable"
+    }
   }
 }
