@@ -3,7 +3,7 @@ const path = require('path');
 const Datastore = require('nedb');
 const dbPath = path.join(app.getPath('userData'), 'tasks.db');
 
-// Crear una nueva base de datos y cargarla automáticamente
+// Create db and load it automatically
 let tasks = new Datastore({ filename: path.join(__dirname, './tasks.db'), autoload: true });
 
 function createWindow() {
@@ -35,7 +35,7 @@ app.on('activate', () => {
     }
 });
 
-// Function to fetch all tasks
+// fetch all tasks
 ipcMain.handle('get-tasks', async () => {
     return new Promise((resolve, reject) => {
         tasks.find({}, (err, docs) => {
@@ -48,7 +48,6 @@ ipcMain.handle('get-tasks', async () => {
     });
 });
 
-// Handle add-task event
 ipcMain.on('add-task', (event, task) => {
     tasks.insert(task, (err, newDoc) => {
         if (err) {

@@ -7,7 +7,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "electron .",
-    "package": "electron-builder"
+    "package": "electron-packager . 4-2Day! --platform=win32 --arch=x64 --out=dist/ --overwrite",
+    "dist": "electron-builder"
   },
   "license": "ISC",
   "dependencies": {
@@ -15,12 +16,20 @@
   },
   "devDependencies": {
     "electron": "^31.0.1",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2"
   },
   "build": {
     "appId": "com.42Day!",
+    "productName": "4 2Day!",
+    "directories": {
+      "output": "dist"
+    },
     "files": [
       "!build-assets/**/*",
+      "database.js",
+      "index.html",
+      "preload.js",
       "tasks.db",
       "main.js",
       "package.json"

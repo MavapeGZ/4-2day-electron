@@ -1,21 +1,21 @@
 document.getElementById('task-form').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+    event.preventDefault(); 
 
-    // Obtener los valores del formulario
+
     let name = document.getElementById("name").value;
     let type = document.querySelector('input[name="type"]:checked');
     let date = document.getElementById("date").value;
     let description = document.getElementById("description").value;
 
-    // Limpiar mensajes de error anteriores
     document.getElementById("error-name").style.display = 'none';
     document.getElementById("error-type").style.display = 'none';
     document.getElementById("error-date").style.display = 'none';
     document.getElementById("error-description").style.display = 'none';
 
+    /*Validations*/
+
     let hasError = false;
 
-    // Validar campos
     if (name === '') {
         document.getElementById("error-name").innerText = "Please, complete the 'name' field";
         document.getElementById("error-name").style.display = 'block';
@@ -48,14 +48,13 @@ document.getElementById('task-form').addEventListener('submit', (event) => {
         description: description
     };
 
-    // Llamar a la función expuesta para agregar la tarea
     window.electron.addTask(task);
 
-    // Limpiar el formulario después de guardar la tarea
+
     document.getElementById('task-form').reset();
 });
 
-// Añadir event listeners para ocultar mensajes de error cuando se introduce un valor
+
 document.getElementById('name').addEventListener('input', () => {
     document.getElementById('error-name').style.display = 'none';
 });
@@ -74,7 +73,7 @@ document.getElementById('description').addEventListener('input', () => {
     document.getElementById('error-description').style.display = 'none';
 });
 
-// Function to update table with tasks
+
 const updateTable = async () => {
     const tasks = await window.electron.getTasks();
     const taskList = document.getElementById('task-list');
@@ -96,7 +95,7 @@ const updateTable = async () => {
             <td><img src="./images/delete.png" alt="delete" class="delete-icon" data-id="${task._id}"></td>
         `;
 
-        // Apply a class if the task date is past
+        // Apply class for the css if the task date is past
         if (task.date < currentDate) {
             row.classList.add('past-due');
         }
@@ -104,7 +103,6 @@ const updateTable = async () => {
         taskList.appendChild(row);
     });
 
-    // Add event listeners to delete images
     document.querySelectorAll('.delete-icon').forEach(icon => {
         icon.addEventListener('click', async (event) => {
             const taskId = event.target.getAttribute('data-id');
@@ -117,11 +115,11 @@ const updateTable = async () => {
 // Call updateTable initially to load existing tasks
 updateTable();
 
-// Listen for 'task-added' event to update table when a new task is added
+
 window.electron.onTaskAdded((result) => {
     if (result.success) {
         console.log(result.message);
-        updateTable(); // Update table with new data
+        updateTable(); 
     } else {
         console.error(result.message);
     }
