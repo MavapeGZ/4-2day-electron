@@ -5,7 +5,6 @@
 - This is a project developed by Mario Vázquez Pérez for the **Quality Management in IT** subject at the **University of Oradea**.
 - The main goal of this project is to create to-do task lists where the user can add and delete tasks to organize the day.
 - The project compares the performance of this app using local storage versus using a database (this is the Electron version).
-- To run this project by yourself, you only need to download the project and run it on your favorite browser.
 
 *To check the local storage project, click [here](https://github.com/MavapeGZ/4-2Day-local.git).*
 
