@@ -1,4 +1,4 @@
-# 4 2Day! Local App
+# 4 2Day! Electron App
 
 ### About 4 2Day!
 
