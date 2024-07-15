@@ -15,6 +15,7 @@
 
 - [Node.js](https://nodejs.org/) (version 12 or later)
 - [Git](https://git-scm.com/)
+- [Electron](https://www.electronjs.org/)
 
 #### Steps to Install and Run
 
